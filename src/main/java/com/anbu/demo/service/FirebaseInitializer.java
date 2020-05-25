@@ -19,11 +19,11 @@ public class FirebaseInitializer {
 	@PostConstruct
 	private void initDB() throws IOException {
 		InputStream serviceAccount = this.getClass().getClassLoader()
-				.getResourceAsStream("./concise-smoke-263214-firebase-adminsdk-xlxtk-d484f5d7be.json");
+				.getResourceAsStream("./use_your_private_key.json");
 
 		FirebaseOptions options = new FirebaseOptions.Builder()
 				.setCredentials(GoogleCredentials.fromStream(serviceAccount))
-				.setDatabaseUrl("https://concise-smoke-263214.firebaseio.com").build();
+				.setDatabaseUrl("https://use_your_project_url.com").build();
 
 		if (FirebaseApp.getApps().isEmpty()) {
 			FirebaseApp.initializeApp(options);
